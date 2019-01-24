@@ -1,0 +1,20 @@
+ d.select("d1","d1,d2,d3".split(",").toList: _*).show
+ 80  d.select("d1,d2,d3".split(",").toList: _*).show
+ 81  d.select("","d1,d2,d3".split(",").toList: _*).show
+ 82  d.select("1","d1,d2,d3".split(",").toList: _*).show
+ 83  d.select("1 as w","d1,d2,d3".split(",").toList: _*).show
+ 84  d.select(1,"d1,d2,d3".split(",").toList: _*).show
+ 85  d.select(d('d1')).show
+ 86  d.select(d("d1")).show
+ 87  d.select("d1,d2,d3".split(",").toList.map(e=>d(e)): _*).show
+ 88  d.select("d1,d2,d3".split(",").map(e=>d(e)): _*).show
+ 89  d.select("d1,d2,d3".split(",").toList.map(e=>d(e)): _*).show
+ 90  def myf (s: String, d: Dataset) = { s.split(",").toList.map(e=>d(e)) }
+ 91  def myf (s: String, d: DataSet) = { s.split(",").toList.map(e=>d(e)) }
+ 92  import org.apache.spark.sql.*
+ 93  import org.apache.spark.sql._
+ 94  def myf (s: String, d: Dataset) = { s.split(",").toList.map(e=>d(e)) }
+ 95  def myf (s: String, d: Dataset[Row]) = { s.split(",").toList.map(e=>d(e)) }
+ 96  d.select(myf("d1,d2,d3", d):_*)
+ 97  d.select(myf("d1,d2,d3", d):_*).show
+ 98  :history
